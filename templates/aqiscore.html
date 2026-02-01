@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}AirScore | Result{% endblock %}
+
+{% block content %}
+<div id="aqibox">
+
+  <h1 id="aqiheading">{{ city }}</h1>
+
+  <h2 class="aqiheading">AQI: {{ aqi }}</h2>
+
+  <div class="subbox">
+    <h3 class="pm" >Net Score</h3>
+    {% if color==green %}
+        <h1 style="color: rgb(4, 84, 4); font-size: 100; ">{{ net_score }}</h1>
+    {% elif color==orange %}
+        <h1 style="color: rgb(181, 94, 0); font-size: 100; ">{{ net_score }}</h1>
+    {% else %}
+        <h1 style="color: rgb(114, 5, 5); font-size: 100;">{{ net_score }}</h1>
+    {% endif %}
+    <p style="font-size: 30px;"><b>{{ verdict }}</b></p>
+  </div>
+
+  <div class="sub">
+    <h3 class="pm">Risk Score</h3>
+    <h1 style="color:rgb(125, 2, 2);"> {{ risk_score }}</h1>
+  </div>
+
+  <div class="sub">
+    <h3 class="pm">Benefit Score</h3>
+    <h1 style="color:rgb(2, 80, 2);"> {{ benefit_score }}</h1>
+  </div>
+
+
+
+</div>
+{% endblock %}
+
+

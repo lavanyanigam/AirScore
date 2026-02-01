@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block title %} AirScore | Score Workout {% endblock %}
+
+{% block content %}
+<div id="aqibox">
+
+  
+  <div class="sub">
+    <h1 id="aqiheading">Score your workout before you sweat.</h1>
+    <h3 class="aqitag"><i>Know when to push and when to pause.</i></h3>
+  </div>
+
+  
+  {% if error %}
+    <div class="alert alert-danger mt-2">{{ error }}</div>
+  {% endif %}
+
+  <form method="POST" action="{{ url_for('aqi_score') }}" class="sub" style="gap:20px; width:100%; max-width:500px;">
+
+    
+    <input
+      class="form-control"
+      type="text"
+      placeholder="Enter City"
+      name="city"
+      required
+    >
+
+  
+    <input
+      class="form-control"
+      type="number"
+      placeholder="Workout Duration (minutes)"
+      name="workout_duration"
+      min="1"
+      required
+    >
+
+ 
+    <select class="form-select" name="intensity" required>
+      <option value="" disabled selected>Workout Intensity</option>
+      <option value="easy">Easy</option>
+      <option value="medium">Medium</option>
+      <option value="hard">Hard</option>
+    </select>
+
+ 
+    <select class="form-select" name="location" required>
+      <option value="" disabled selected>Workout Location</option>
+      <option value="indoor">Indoor</option>
+      <option value="outdoor">Outdoor</option>
+    </select>
+
+   
+    <button class="btn btn-success btn-lg mt-2">
+      Get AirScore
+    </button>
+
+  </form>
+
+</div>
+{% endblock %}

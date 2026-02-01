@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block title %} AirScore | Search AQI Today {% endblock %}
+{% block content %}
+
+  <div id="homebox">
+    <div class="sub">
+      <h1 id="aqiheading"> Get Current Air Quality For Your Area </h1>
+    </div>
+    <div class="sub">
+      {% if error %}
+      <div class="alert alert-danger mt-2" role="alert">
+          {{ error }}
+      </div>
+      {% endif %}
+
+      <form class="d-flex" method="POST" action="{{ url_for('get_aqi') }}"  >
+        <input 
+          class="form-control me-2" 
+          type="search" 
+          placeholder="Search your City" 
+          aria-label="Search" 
+          name="city"
+          >
+      <button class="btn btn-success ">
+        Get AQI
+      </button>
+      </form>
+    </div>
+    <div class="sub"> 
+      <div class="button-cont">
+        <a href="{{ url_for('airscore')}}" class="navbtn">
+            Get Air Score
+        </a>
+        <a href="{{ url_for('personalizedworkout')}}" class="navbtn">
+            Chose Workout
+        </a>
+
+    </div>
+    </div>
+    
+  </div>
+    
+    
+  {% endblock %}
+

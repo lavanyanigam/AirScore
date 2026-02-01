@@ -1,0 +1,169 @@
+{% extends 'base.html' %}
+{% block title %} AirScore | Workout Recommendations {% endblock %}
+{% block content %}
+
+<div id="homebox">
+
+  <div class="sub">
+    <h1 id="aqiheading">Choose Your Workout by Intensity</h1>
+    <h3 class="aqitag"><i>Recommendations based on effort level and environment</i>
+      
+    </h3>
+  </div>
+
+  <div class="sub">
+    <h1 class="pm"> Indoor Workouts</h1>
+  </div>
+
+  <div class="accordion big-accordion" id="indoorAccordion">
+
+
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+          data-bs-target="#indoorEasy">
+           Easy
+        </button>
+      </h2>
+      <div id="indoorEasy" class="accordion-collapse collapse show">
+        <div class="accordion-body">
+          <strong>Good for:</strong> Poor AQI days, recovery, beginners
+          <ul>
+            <li>Light stretching & mobility</li>
+            <li>Yoga / Pilates</li>
+            <li>Slow body-weight movements</li>
+            <li>Breathing exercises</li>
+            <li>10–20 min indoor walk</li>
+          </ul>
+          <i>Best when pollution is high or your net score is low.</i>
+        </div>
+      </div>
+    </div>
+
+  
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button"
+          data-bs-toggle="collapse" data-bs-target="#indoorMedium">
+          Medium
+        </button>
+      </h2>
+      <div id="indoorMedium" class="accordion-collapse collapse">
+        <div class="accordion-body">
+          <strong>Good for:</strong> Balanced fitness days
+          <ul>
+            <li>Body-weight circuits (squats, pushups)</li>
+            <li>Resistance band workouts</li>
+            <li>Core strengthening</li>
+            <li>Stationary cycling</li>
+            <li>Light dumbbell training</li>
+          </ul>
+          <i>Best for moderate net score and indoor preference.</i>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button"
+          data-bs-toggle="collapse" data-bs-target="#indoorHard">
+           Hard
+        </button>
+      </h2>
+      <div id="indoorHard" class="accordion-collapse collapse">
+        <div class="accordion-body">
+          <strong>Good for:</strong> High-energy indoor sessions
+          <ul>
+            <li>HIIT (short intervals)</li>
+            <li>Heavy strength training</li>
+            <li>Cross-training circuits</li>
+            <li>Treadmill running</li>
+            <li>Power yoga / cardio classes</li>
+          </ul>
+          <i>Choose only when your net score is high.</i>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="sub mt-5">
+    <h1 class="pm">Outdoor Workouts</h1>
+  </div>
+
+  <div class="accordion big-accordion" id="outdoorAccordion">
+
+
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button" type="button"
+          data-bs-toggle="collapse" data-bs-target="#outdoorEasy">
+           Easy
+        </button>
+      </h2>
+      <div id="outdoorEasy" class="accordion-collapse collapse show">
+        <div class="accordion-body">
+          <strong>Good for:</strong> Slightly polluted days
+          <ul>
+            <li>Leisure walking</li>
+            <li>Light cycling</li>
+            <li>Stretching in parks</li>
+            <li>Casual outdoor yoga</li>
+          </ul>
+          <i>Safe choice when AQI is moderate.</i>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button"
+          data-bs-toggle="collapse" data-bs-target="#outdoorMedium">
+           Medium
+        </button>
+      </h2>
+      <div id="outdoorMedium" class="accordion-collapse collapse">
+        <div class="accordion-body">
+          <strong>Good for:</strong> Acceptable AQI days
+          <ul>
+            <li>Jogging / brisk walking</li>
+            <li>Outdoor body-weight workouts</li>
+            <li>Sports practice</li>
+            <li>Moderate cycling</li>
+          </ul>
+          <i>Best when AQI is under control.</i>
+        </div>
+      </div>
+    </div>
+
+   
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button"
+          data-bs-toggle="collapse" data-bs-target="#outdoorHard">
+          Hard
+        </button>
+      </h2>
+      <div id="outdoorHard" class="accordion-collapse collapse">
+        <div class="accordion-body">
+          <strong>Good for:</strong> Clean air days only
+          <ul>
+            <li>Sprint training</li>
+            <li>Long-distance running</li>
+            <li>Outdoor HIIT</li>
+            <li>Competitive sports</li>
+          </ul>
+          <p class="text-danger">
+             Avoid if AQI &gt; 100
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block title %} AirScore | AQI Today {% endblock %}
+{% block content %}
+  <div id="homebox">
+    <div class="sub">
+        {% set cityname= aqi_data.city.split(',')[0] if not aqi_data.city.split(',')[1] else aqi_data.city.split(',')[0]+", "+ aqi_data.city.split(',')[1] %}
+      <h1 id="aqiheading">AQI AT {{ cityname }} TODAY</h1>
+    </div>
+    
+    <div class="sub">
+        {%  if aqi_data and aqi_data.aqi <100 %}
+        <h1 id="aqishow" style="font-size:300px; font-family:sans-serif; color:rgb(13,94,58); text-align:center;">
+            {{ aqi_data.aqi }}
+        </h1>
+
+
+        {% else %}
+            <h1 id="aqishow" style="
+                font-size: 300px;
+                font-family: sans-serif;
+                color: rgb(139, 32, 8);
+                text-align: center;
+                ">
+            {{ aqi_data.aqi }}</h1>
+        {% endif %}
+
+        <br>
+        <h2 class="pm"><b>PM 2.5: </b>{{ aqi_data.pm25 }}</h2>
+    
+        <br>
+        <h2 class="pm"><b>PM 10:</b> {{ aqi_data.pm10 }}</h2>
+    </div>
+    <div class="sub"> 
+      <div class="button-cont">
+        <a href="{{ url_for('airscore')}}" class="navbtn">
+            Get Air Score
+        </a>
+        <a href="{{ url_for('personalizedworkout')}}" class="navbtn">
+            Chose Workout
+        </a>
+    </div>
+    </div>
+    
+  </div>
+    
+    
+  {% endblock %}
+
