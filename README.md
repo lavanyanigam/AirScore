@@ -4,7 +4,7 @@ A web app that scores your workout by combining exercise benefits with air quali
 
 ---
 
-##Results
+## Results
 ![Home Page](Results/i2.png)
 ![AQI Display](Results/i3.png)
 ![Air Score](Results/i4.png)
@@ -15,9 +15,9 @@ A web app that scores your workout by combining exercise benefits with air quali
 
 ## Features
 
--Scores your planned workout using exercise benefits vs air quality risk
--Recommends indoor or outdoor workouts based on current AQI
--Shows real-time AQI for any city around the World
+- Scores your planned workout using exercise benefits vs air quality risk
+- Recommends indoor or outdoor workouts based on current AQI
+- Shows real-time AQI for any city around the World
 
 ---
 
