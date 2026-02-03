@@ -2,7 +2,7 @@ from flask import Flask, render_template, request
 import requests
 
 app=Flask(__name__)
-api_key="67e2be7b1958936d46c2b55b8e0db7bd5e959fc0"
+api_key="XXXXXXXXXXXXXX"
 
 @app.route("/")
 def index():
